@@ -48,7 +48,7 @@ java -jar <JAR-location> $@
 ```
 
   * Replace `<JAR-location>` with the absolute path of the previously created JAR file.
-  * It is recommendation to call this shell script `create-sbt-project`.
+  * It is recommended to call this shell script `create-sbt-project`.
   * Make sure the script is in a directory that is contained in your `$PATH`.
   * Do not forget to make it exectuable, as in `chmod +x create-sbt-project` for Unix-like systems.
 * _Or_:
