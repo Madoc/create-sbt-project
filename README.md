@@ -52,7 +52,7 @@ java -jar <JAR-location> $@
   * Make sure the script is in a directory that is contained in your `$PATH`.
   * Do not forget to make it exectuable, as in `chmod +x create-sbt-project` for Unix-like systems.
 * _Or_:
-  * Change your `.bashrc` or `.zshrc to add an appropriate alias that does the same as the above mentioned shell
+  * Change your `.bashrc` or `.zshrc` to add an appropriate alias that does the same as the above mentioned shell
 script.
 * Those techniques work for Unix-like systems, such as the various Linuxes or macOS. For Windows systems, the
 creation of a `.bat` file might be advisable, but the author of this document does not know about this.
