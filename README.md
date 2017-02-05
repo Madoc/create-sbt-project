@@ -17,7 +17,7 @@ used
 
 ### Out of scope
 
-In contrast, these are two things that it _cannot_ do:
+In contrast, these are things that it _cannot_ do:
 * It cannot create a `Build.scala` file.
 * It cannot check if the library versions that you are using are actually the lastest ones available on the internet.
 * It cannot change an _already existing_ SBT project. With this tool, you can only create a new project.
