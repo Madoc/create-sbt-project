@@ -69,8 +69,8 @@ create-sbt-project my-new-project
 ```
 
 When run without a configuration while in the user's home directory, this will simply create a new folder called
-`my-new-project`, containing just one `build.sbt` file, and the folder `src/main/scala`.
-The build file will only contain the line: `name := "my-new-project`
+`my-new-project`, containing just one `build.sbt` file, and the empty folder `src/main/scala`.
+The build file will only contain the line: `name := "my-new-project"`
 
 The parameter `my-new-project` is the name of the _project directory_.
 Since no separate _project name_ has been supplied, this is inferred from the project directory, which means that the
