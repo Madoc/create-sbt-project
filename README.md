@@ -29,7 +29,7 @@ This is a list of things that `create-sbt-project` cannot _yet_ do, but that are
 * execute `sbt compile` once in the new project folder, in order to verify that all plugins and dependencies can
 actually be retrieved.
 
-### Ìnstallation as shell command
+### Installation as shell command
 
 Being a Scala program, `create-sbt-project` compiles into a JAR file.
 This is not directly exectuable in your shell.
