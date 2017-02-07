@@ -189,7 +189,7 @@ class TestWithUserConfig extends FreeSpec with Matchers with MainTestTools {
         |Whitespace after group ID of library definition: "com.github.madoc " %% "testdep" % "0.1-SNAPSHOT"
       """.stripMargin.trim)
   }
-  "empty element of a dependency results in an error message" in {
+  "empty group element of a dependency results in an error message" in {
     runWithUserConfig(
       """
         |{"refs": {
@@ -199,6 +199,30 @@ class TestWithUserConfig extends FreeSpec with Matchers with MainTestTools {
       """.stripMargin)("testproject")(noStandardOutput=true).getErrorOutput.trim should be("""
         |Error in user configuration:
         |Empty group ID of library definition: "" %% "testdep" % "0.1-SNAPSHOT"
+      """.stripMargin.trim)
+  }
+  "empty artifact element of a dependency results in an error message" in {
+    runWithUserConfig(
+      """
+        |{"refs": {
+        |  "libraryRefs": {
+        |    "testlib": [{"group":"com.github.madoc", "artifact":"", "version":"0.1-SNAPSHOT"}]
+        |}}}
+      """.stripMargin)("testproject")(noStandardOutput=true).getErrorOutput.trim should be("""
+        |Error in user configuration:
+        |Empty artifact ID of library definition: "com.github.madoc" %% "" % "0.1-SNAPSHOT"
+      """.stripMargin.trim)
+  }
+  "empty version element of a dependency results in an error message" in {
+    runWithUserConfig(
+      """
+        |{"refs": {
+        |  "libraryRefs": {
+        |    "testlib": [{"group":"com.github.madoc", "artifact":"testdep", "version":""}]
+        |}}}
+      """.stripMargin)("testproject")(noStandardOutput=true).getErrorOutput.trim should be("""
+        |Error in user configuration:
+        |Empty revision of library definition: "com.github.madoc" %% "testdep" % ""
       """.stripMargin.trim)
   }
   "duplicate Java option context results in an error message" in {

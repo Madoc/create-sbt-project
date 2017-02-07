@@ -73,13 +73,6 @@ object OutputConfigError extends Output[ConfigError] {
     def apply(the:Seq[ConfigError])(write:Write) = the.foreach(write(_) lineBreak())
   }
 
-  private implicit val depdendencyConfigOutput:Output[Either[LibraryRefConfig,PluginRefConfig]] = new Output[Either[LibraryRefConfig,PluginRefConfig]] {
-    def apply(the:Either[LibraryRefConfig, PluginRefConfig])(write:Write) = the match {
-      case Left(lib) ⇒ libraryRefConfigOutput(lib)(write)
-      case Right(plugin) ⇒ pluginRefConfigOutput(plugin)(write)
-    }
-  }
-
   private implicit val libraryRefConfigOutput:Output[LibraryRefConfig] = new Output[LibraryRefConfig] {
     def apply(the:LibraryRefConfig)(write:Write) {
       write inQuotes {_ stringEscaped (the group)}
