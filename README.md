@@ -4,6 +4,8 @@ create-sbt-project
 [![Build Status](https://travis-ci.org/Madoc/create-sbt-project.svg?branch=master)](https://travis-ci.org/Madoc/create-sbt-project)
 [![Coverage Status](https://coveralls.io/repos/github/Madoc/create-sbt-project/badge.svg?branch=master)](https://coveralls.io/github/Madoc/create-sbt-project?branch=master)
 
+**Latest release version:** `0.1.0`, Git tag: `release-0.1.0`
+
 A tool that creates new SBT projects for you, to speed up the time it takes until you can start coding.
 Intended to be used from the command-line.
 
@@ -39,6 +41,7 @@ This is not directly exectuable in your shell.
 In order to make it executable, you have to follow steps like these:
 
 * Clone this Git repository to your local machine, at a convenient location.
+  * Make sure that you clone the latest release version, which you can find at the Git tag named at the top of this document, unless you want to use a snapshot version.
 * Execute `sbt assembly`.
 * Copy the resulting file `target/scala-2.11/create-sbt-project-assembly-*.jar` to a convenient location for future
 execution. (The `*` in the mentioned path denotes the project version.)
