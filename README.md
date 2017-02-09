@@ -1,9 +1,8 @@
-[![Stories in Ready](https://badge.waffle.io/Madoc/create-sbt-project.png?label=ready&title=Ready)](https://waffle.io/Madoc/create-sbt-project)
 create-sbt-project
 ==================
 
 [![Build Status](https://travis-ci.org/Madoc/create-sbt-project.svg?branch=master)](https://travis-ci.org/Madoc/create-sbt-project)
-[![Coverage Status](https://coveralls.io/repos/github/Madoc/create-sbt-project/badge.svg?branch=master)](https://coveralls.io/github/Madoc/create-sbt-project?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Madoc/create-sbt-project/badge.svg?branch=master)](https://coveralls.io/github/Madoc/create-sbt-project?branch=master) [![Stories in Ready](https://badge.waffle.io/Madoc/create-sbt-project.png?label=ready&title=Ready)](https://waffle.io/Madoc/create-sbt-project)
 
 A tool that creates new SBT projects for you, to speed up the time it takes until you can start coding.
 Intended to be used from the command-line.
