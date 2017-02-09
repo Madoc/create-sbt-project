@@ -13,8 +13,8 @@ class TestHelpAndVersion extends FreeSpec with Matchers with MainTestTools {
       "java.vm.info" → "unit test mode"
     ) {
       runWithNoUserConfig("-v")(noErrorOutput=true).getStandardOutput.trim should be (
-        """
-          |create-sbt-project 0.1-SNAPSHOT
+        s"""
+          |create-sbt-project ${BuildInfo version}
           |Java Test Environment (build 1.8.0_testbuild)
           |Java Test VM (build 25.25-test, unit test mode)
         """.stripMargin.trim)
@@ -24,8 +24,8 @@ class TestHelpAndVersion extends FreeSpec with Matchers with MainTestTools {
       "java.vm.name" → null
     ) {
       runWithNoUserConfig("-v")(noErrorOutput=true).getStandardOutput.trim should be (
-        """
-          |create-sbt-project 0.1-SNAPSHOT
+        s"""
+          |create-sbt-project ${BuildInfo version}
         """.stripMargin.trim)
     }
     mockSystemProperties(
@@ -48,8 +48,8 @@ class TestHelpAndVersion extends FreeSpec with Matchers with MainTestTools {
       "java.vm.info" → null
     ) {
       runWithNoUserConfig("-v")(noErrorOutput=true).getStandardOutput.trim should be (
-        """
-          |create-sbt-project 0.1-SNAPSHOT
+        s"""
+          |create-sbt-project ${BuildInfo version}
           |Java Test VM (build 25.25-test)
         """.stripMargin.trim)
     }

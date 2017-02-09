@@ -6,7 +6,7 @@ class BuildDefinitionTest extends FreeSpec with Matchers {
   "basic test" in {
     val buildFile = BuildDefinition(
       name = Some("create-sbt-project"),
-      organization = Some("eu.madoc"),
+      organization = Some("com.github.madoc"),
       version = Some("0.1-SNAPSHOT"),
       scalaVersion = Some("2.11.8"),
       extraScalacOptions = Seq("-language:_", "-unchecked", "-deprecation", "-encoding", "utf8"),
@@ -25,7 +25,7 @@ class BuildDefinitionTest extends FreeSpec with Matchers {
       additionalCommands=Seq("jacoco.settings")
     )
     buildFile.toString should be (
-      """organization := "eu.madoc"
+      """organization := "com.github.madoc"
         |
         |name := "create-sbt-project"
         |

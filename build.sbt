@@ -1,8 +1,8 @@
-organization := "eu.madoc"
+organization := "com.github.madoc"
 
 name := "create-sbt-project"
 
-version := "0.1-SNAPSHOT"
+version := "0.1.0"
 
 scalaVersion := "2.11.8"
 
