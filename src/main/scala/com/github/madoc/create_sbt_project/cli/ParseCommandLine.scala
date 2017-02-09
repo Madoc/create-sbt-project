@@ -3,12 +3,13 @@ package com.github.madoc.create_sbt_project.cli
 import java.io.PrintWriter
 
 import com.github.madoc.create_sbt_project.cli.CommandLineResult._
-import com.github.madoc.create_sbt_project.config.validation.ConfigError.ErrorNature.MoreThanOneProjectDirectorySpeficied
+import com.github.madoc.create_sbt_project.config.validation.ConfigError.ErrorLocation.CommandLineArgument
+import com.github.madoc.create_sbt_project.config.validation.ConfigError.ErrorNature.{MoreThanOneProjectDirectorySpeficied, UnrecognizedCommandLineOption}
 import com.github.madoc.create_sbt_project.config.{ExampleConfiguration, RootConfig}
-import org.apache.commons.cli.{CommandLine, DefaultParser, Options}
+import org.apache.commons.cli.{CommandLine, DefaultParser, Options, UnrecognizedOptionException}
 
 object ParseCommandLine {
-  def apply(args:Seq[String]):CommandLineResult = if(args==null) CreateSBTProject(identity) else {
+  def apply(args:Seq[String]):CommandLineResult = if(args==null) CreateSBTProject(identity) else try {
     val cl = parse(args)
     if((cl hasOption "help")||(cl hasOption '?')) PrintHelp {width:Int⇒ write⇒
       val formatter = new CSPHelpFormatter
@@ -19,6 +20,9 @@ object ParseCommandLine {
     else if(cl hasOption 'v') PrintVersionInfo
     else if(cl hasOption 'V') modConfig(cl)(PrintCurrentConfig)
     else modConfig(cl)(CreateSBTProject)
+  } catch {
+    case unrecognized:UnrecognizedOptionException ⇒
+      CommandLineErrors(Seq(UnrecognizedCommandLineOption asErrorAt CommandLineArgument(unrecognized getOption)))
   }
 
   private def parse(args:Seq[String]):CommandLine = new DefaultParser().parse(options, args toArray)

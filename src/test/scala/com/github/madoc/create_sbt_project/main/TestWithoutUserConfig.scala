@@ -92,4 +92,7 @@ class TestWithoutUserConfig extends FreeSpec with Matchers with MainTestTools {
     val output = runWithNoUserConfig("--example-config", "--print-config")(noErrorOutput=true).getStandardOutput
     output.parseJson.convertTo[RootConfig] should be (ExampleConfiguration root)
   }
+  "using an unknown command-line argument does not throw an exception" in {
+    runWithNoUserConfig("--unknown-command")(noStandardOutput=true)
+  }
 }

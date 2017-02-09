@@ -19,17 +19,19 @@ object ConfigError {
   object ErrorNature {
     sealed case class DuplicateJavaOptionContext(context:Set[String]) extends ErrorNature
     object ElementIsEmpty extends ErrorNature
-    object WhitespaceAfter extends ErrorNature
-    object WhitespaceBefore extends ErrorNature
     sealed case class MissingDefinition(what:SomethingToDefine, ref:String) extends ErrorNature
     object MoreThanOneProjectDirectorySpeficied extends ErrorNature
     object NeitherNameNorDirectoryIsSet extends ErrorNature {
       override def mightBeSolvedByCommandLineArgs = true
     }
+    object UnrecognizedCommandLineOption extends ErrorNature
+    object WhitespaceAfter extends ErrorNature
+    object WhitespaceBefore extends ErrorNature
   }
 
   sealed trait ErrorLocation
   object ErrorLocation {
+    sealed case class CommandLineArgument(arg:String) extends ErrorLocation
     sealed case class ElementOf(element:DependencyElement, of:ErrorLocation) extends ErrorLocation
     sealed case class LibraryRefConfigLocation(libraryRefConfig:LibraryRefConfig) extends ErrorLocation
     sealed case class PluginRefConfigLocation(pluginRefConfig:PluginRefConfig) extends ErrorLocation
