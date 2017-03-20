@@ -44,10 +44,10 @@ object ExampleConfiguration {
       "org.scala-lang.modules", "scala-xml", "1.0.6", withSources=Some(true)
     )),
     "scalatest" → Set(LibraryRefConfig(
-      "org.scalatest", "scalatest", "3.0.0", configuration=Some("test"), withSources=Some(true)
+      "org.scalatest", "scalatest", "3.0.1", configuration=Some("test"), withSources=Some(true)
     )),
     "scalacheck" → Set(LibraryRefConfig(
-      "org.scalacheck", "scalacheck", "1.13.3", configuration=Some("test"), withSources=Some(true)
+      "org.scalacheck", "scalacheck", "1.13.4", configuration=Some("test"), withSources=Some(true)
     ))
   )
 
