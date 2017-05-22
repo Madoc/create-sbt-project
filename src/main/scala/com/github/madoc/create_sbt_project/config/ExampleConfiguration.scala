@@ -6,8 +6,8 @@ object ExampleConfiguration {
   lazy val project = ProjectConfig(
     organization = Some("com.mycompany"),
     version = Some("0.1-SNAPSHOT"),
-    scalaVersion = Some("2.12.1"),
-    sbtVersion = Some("0.13.13"),
+    scalaVersion = Some("2.12.2"),
+    sbtVersion = Some("0.13.15"),
     extraScalacOptions = Some(Seq("-unchecked", "-deprecation", "-encoding", "utf8")),
     extraJavaOptions = Some(Set(
       JavaContextOptionConfig(options = Seq("-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005")),
@@ -53,7 +53,7 @@ object ExampleConfiguration {
 
   lazy val pluginRefs:Map[String,Set[PluginRefConfig]] = Map(
     "jacoco" → Set(PluginRefConfig(
-      "de.johoop", "jacoco4sbt", "2.2.0", extraBuildCommands=Some(Seq("jacoco.settings"))
+      "de.johoop", "jacoco4sbt", "2.3.0", extraBuildCommands=Some(Seq("jacoco.settings"))
     )),
     "scoverage" → Set(PluginRefConfig(
       "org.scoverage", "sbt-scoverage", "1.5.0"
