@@ -14,6 +14,7 @@ object ExampleConfiguration {
       JavaContextOptionConfig(contexts = Some(Set("Test", "run")), options = Seq("-Djava.awt.headless=true"))
     )),
     gitIgnore = Some(Set(
+      ".cache",
       ".classpath",
       ".idea",
       ".idea_modules",
@@ -21,11 +22,15 @@ object ExampleConfiguration {
       ".project",
       ".settings",
       "*.iml",
+      "*.log",
+      "*ddata*/data.mdb",
       "atlassian-ide-plugin.xml",
       "conf/local.conf",
+      "dist",
       "logs",
       "target",
       "out",
+      "overrides.conf",
       "project/target",
       "project/project",
       "project.vim",
